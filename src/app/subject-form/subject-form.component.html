@@ -1,0 +1,28 @@
+<div class="mt-5">
+  <h2>Add subject</h2>
+  <form #subjectForm="ngForm" >
+    <div class="form-group row">
+      <label for="name" class="col-sm-1 col-form-label">Name</label>
+      <div class="col-sm-11">
+        <input type="text" class="form-control" id="name" name="name" placeholder="Systemy mikroprocesorowe i wbudowane" [(ngModel)]="subject.name">
+      </div>
+    </div>
+    <div class="form-group row">
+        <label for="year" class="col-sm-1 col-form-label">Year</label>
+        <div class="col-sm-5">
+          <input type="numer" class="form-control" id="year" name="year" placeholder="2019" [(ngModel)]="subject.year">
+        </div>
+        <label for="semester" class="col-sm-1 col-form-label">Semester</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="semester" name="semester" placeholder="2" [(ngModel)]="subject.semester">
+        </div>
+      </div>
+    <div class="form-group">
+      <label for="teachers">Teachers</label>
+      <select multiple class="form-control" id="teachers" name="teachers" [(ngModel)]="subject.teachers">
+        <option *ngFor="let teacher of teachers" [value]="teacher">{{ teacher }}</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Add subject</button>
+  </form>
+</div>

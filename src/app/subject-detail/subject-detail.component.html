@@ -1,0 +1,9 @@
+<div *ngIf="subject" class="mt-5">
+  <h2>{{ subject.name | uppercase }}</h2>
+  <h4>{{ subject.year }} - {{ subject.semester }}</h4>
+  <label>name:
+    <input [(ngModel)]=" subject.name" placeholder="name"/>
+  </label>
+  <button (click)="save()" type="button" class="btn btn-primary">save</button>
+  <button (click)="goBack()" type="button" class="btn btn-primary">back</button>
+</div>

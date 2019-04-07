@@ -1,24 +1,7 @@
-<form>
-  <div class="form-group form-inline">
-      <input class="form-control ml-2" type="text" [formControl]="filter"/>
-  </div>
-</form>
+<ul class="list-group subjects">
+  <li *ngFor="let subject of subjects" [class.active]="subject === selectedSubject" class="list-group-item">
+    <a routerLink="/subjects/{{ subject.id }}">{{ subject.name }}</a>
+  </li>
+</ul>
 
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">Subject</th>
-    <th scope="col">Year</th>
-    <th scope="col">Semester</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let subject of subjects$ | async; index as i">
-    <th scope="row"> {{ i + 1 }} </th>
-    <td> {{ subject.name }} </td>
-    <td> {{ subject.year }} </td>
-    <td> {{ subject.semester }} </td>
-  </tr>
-  </tbody>
-</table>
+<app-subject-form></app-subject-form>
