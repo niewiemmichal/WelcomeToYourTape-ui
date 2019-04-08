@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
-interface SubjectModel {
-  name: string;
-  year: number;
-  semester: number;
-  teachers: string[];
-}
+import { Subject } from '../subject'
+import { TeacherService } from '../teacher.service'
+import { Teacher } from '../teacher';
 
 @Component({
   selector: 'app-subject-form',
@@ -14,15 +10,15 @@ interface SubjectModel {
 })
 export class SubjectFormComponent implements OnInit {
 
-  subject: SubjectModel = { name: '', year: 0, semester: 0, teachers: [] };
+  subject: Subject = { id: 0, name: '', year: 0, semester: 0 };
+  teachers: Teacher[] = []
+  selectedTeachers: Teacher[] = []
 
-  teachers: string[] = [
-    'Jan Kowalski', 'Antonio Banderas', 'Kot Wbutach', 'Władysław Jagiełło'
-  ]
-
-  constructor() { }
+  constructor(private teacherService: TeacherService) { }
 
   ngOnInit() {
+    this.teacherService.getTeachers()
+      .subscribe(ts => this.teachers = ts);
   }
 
 }
