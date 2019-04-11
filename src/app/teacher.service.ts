@@ -9,10 +9,11 @@ import { catchError } from 'rxjs/operators';
 })
 export class TeacherService {
 
-  private teachersUrl = 'api/teachers';
+  private teachersUrl = 'http://localhost:8080/welcometoyourtape/teachers';
 
-  getTeachers(): Observable<Teacher[]> {
-    return this.client.get<Teacher[]>(this.teachersUrl)
+  getTeachers(subjectId: number): Observable<Teacher[]> {
+    const url = `${this.teachersUrl}/subject/${subjectId}`;
+    return this.client.get<Teacher[]>(url)
       .pipe(catchError(this.handleError<Teacher[]>('getTeachers', [])));
   }
 

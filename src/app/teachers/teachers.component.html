@@ -1,0 +1,7 @@
+<div class="text-center mt-5">
+  <ul class="list-group list-group-flush teachers">
+    <li *ngFor="let teacher of teachers" class="list-group-item p-3">
+      <h3><a routerLink="/subjects/{{ id }}/teachers/{{ teacher.id }}">{{ teacher.name }} {{ teacher.surname }}</a></h3>
+    </li>
+  </ul>
+</div>

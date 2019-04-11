@@ -11,6 +11,8 @@ import { SubjectDetailComponent } from './subject-detail/subject-detail.componen
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { SubjectFormComponent } from './subject-form/subject-form.component';
+import { TeachersComponent } from './teachers/teachers.component';
+import { SurveysComponent } from './surveys/surveys.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { SubjectFormComponent } from './subject-form/subject-form.component';
     AppComponent,
     SubjectsComponent,
     SubjectDetailComponent,
-    SubjectFormComponent
+    SubjectFormComponent,
+    TeachersComponent,
+    SurveysComponent
   ],
   imports: [
     BrowserModule,
@@ -27,9 +31,9 @@ import { SubjectFormComponent } from './subject-form/subject-form.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    ),
+    //HttpClientInMemoryWebApiModule.forRoot(
+    //  InMemoryDataService, { dataEncapsulation: false }
+    //),
     RouterModule
   ],
   providers: [],

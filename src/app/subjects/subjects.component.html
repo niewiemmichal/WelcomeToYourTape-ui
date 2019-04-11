@@ -1,7 +1,7 @@
-<ul class="list-group subjects">
-  <li *ngFor="let subject of subjects" [class.active]="subject === selectedSubject" class="list-group-item">
-    <a routerLink="/subjects/{{ subject.id }}">{{ subject.name }}</a>
-  </li>
-</ul>
-
-<app-subject-form></app-subject-form>
+<div class="text-center mt-5">
+  <ul class="list-group list-group-flush subjects">
+    <li *ngFor="let subject of subjects" class="list-group-item">
+      <h3><a routerLink="/subjects/{{ subject.id }}/teachers">{{ subject.name }}</a></h3>
+    </li>
+  </ul>
+</div>

@@ -9,10 +9,10 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class SubjectService {
 
-  private subjectsUrl = 'api/subjects';
+  private subjectsUrl = 'http://localhost:8080/welcometoyourtape/subjects';
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  } 
+  }
 
   getSubjects(): Observable<Subject[]> {
     return this.client.get<Subject[]>(this.subjectsUrl)

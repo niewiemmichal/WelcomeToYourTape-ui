@@ -1,2 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+.star {
+  font-size: 3rem;
+  color: #b0c4de;
+}
+
+.filled {
+  color: #1e90ff;
+}
