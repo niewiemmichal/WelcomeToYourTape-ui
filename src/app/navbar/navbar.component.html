@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="https://image.flaticon.com/icons/svg/1693/1693366.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+    Welcome To Your Tape
+  </a>
+  <button class="navbar-toggler" type="button" (click)="shouldBeCollapsed = !shouldBeCollapsed" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div [ngbCollapse]="shouldBeCollapsed" class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/subjects/add">Add subjects</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Add teachers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Add questions</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Show surveys</a>
+      </li>
+    </ul>
+  </div>
+</nav>

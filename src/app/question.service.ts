@@ -9,7 +9,7 @@ import { Question } from './question';
 })
 export class QuestionService {
 
-  private questionsUrl = 'http://localhost:8080/welcometoyourtape/questions';
+  private questionsUrl = 'https://michalpadula.me/welcometoyourtape/questions';
 
   getQuestions(): Observable<Question[]> {
     return this.client.get<Question[]>(this.questionsUrl)

@@ -13,6 +13,7 @@ import { InMemoryDataService } from './in-memory-data.service';
 import { SubjectFormComponent } from './subject-form/subject-form.component';
 import { TeachersComponent } from './teachers/teachers.component';
 import { SurveysComponent } from './surveys/surveys.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { SurveysComponent } from './surveys/surveys.component';
     SubjectDetailComponent,
     SubjectFormComponent,
     TeachersComponent,
-    SurveysComponent
+    SurveysComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

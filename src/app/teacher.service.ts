@@ -9,7 +9,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class TeacherService {
 
-  private teachersUrl = 'http://localhost:8080/welcometoyourtape/teachers';
+  private teachersUrl = 'https://michalpadula.me/welcometoyourtape/teachers';
 
   getTeachers(subjectId: number): Observable<Teacher[]> {
     const url = `${this.teachersUrl}/subject/${subjectId}`;
@@ -17,11 +17,16 @@ export class TeacherService {
       .pipe(catchError(this.handleError<Teacher[]>('getTeachers', [])));
   }
 
-  private handleError<T> (operation: string, result?: T) {
+  getAllTeachers(): Observable<Teacher[]> {
+    return this.client.get<Teacher[]>(this.teachersUrl)
+      .pipe(catchError(this.handleError<Teacher[]>('getTeachers', [])));
+  }
+
+  private handleError<T>(operation: string, result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
       return of(result as T);
-    }
+    };
   }
 
   constructor(private client: HttpClient) { }

@@ -20,9 +20,17 @@
     <div class="form-group">
       <label for="teachers">Teachers</label>
       <select multiple class="form-control" id="teachers" name="teachers" [(ngModel)]="selectedTeachers">
-        <option *ngFor="let teacher of teachers" [value]="teacher">{{ teacher.name }}</option>
+        <option *ngFor="let teacher of teachers" [value]="teacher">{{ teacher.name }} {{ teacher.surname }}</option>
       </select>
     </div>
-    <button type="submit" class="btn btn-primary">Add subject</button>
+    <button type="submit" class="btn btn-primary" (click)="addSubject()">Add subject</button>
   </form>
+  <div *ngIf="recentlyAdded.length > 0">
+    <h2>Recently added</h2>
+    <ul class="list-group list-group-flush subjects">
+      <li *ngFor="let subject of recentlyAdded" class="list-group-item">
+        <h3>{{ subject.name }}</h3>
+      </li>
+    </ul>
+  </div>
 </div>
