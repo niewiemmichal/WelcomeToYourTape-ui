@@ -1,4 +1,5 @@
-<div class="text-center mt-5">
+<h2 class="mt-5 text-center">Subjects</h2>
+<div class="text-center mt-2">
   <ul class="list-group list-group-flush subjects">
     <li *ngFor="let subject of subjects" class="list-group-item">
       <h3><a routerLink="/subjects/{{ subject.id }}/teachers">{{ subject.name }}</a></h3>

@@ -1,0 +1,38 @@
+<div class="mt-5">
+  <h2>Add teacher</h2>
+  <form #teacherForm="ngForm">
+    <div class="form-group row">
+        <div class="col-sm-2">
+            <select class="form-control form-control-sm" name="degrees" [(ngModel)]="teacher.degree">
+              <option value="MASTER">Master</option>
+              <option value="DOCTORAL">Doctoral</option>
+              <option value="PROFESSOR">Professor</option>
+            </select>
+        </div>
+        <label for="year" class="col-sm-1 col-form-label">Name</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="year" name="year" placeholder="John" [(ngModel)]="teacher.name">
+        </div>
+        <label for="semester" class="col-sm-1 col-form-label">Surname</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="semester" name="semester" placeholder="Doe" [(ngModel)]="teacher.surname">
+        </div>
+      </div>
+    <div class="form-group">
+      <label for="subjects">Subjects</label>
+      <select multiple class="form-control" id="subjects" name="subjects" [(ngModel)]="selectedSubjects">
+        <option *ngFor="let subject of subjects" [value]="subject">{{ subject.name }}</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="addSubject()">Add subject</button>
+    <button type="button" class="btn btn-secondary ml-2" routerLink="/">Return</button>
+  </form>
+  <div *ngIf="recentlyAdded.length > 0">
+    <h2>Recently added</h2>
+    <ul class="list-group list-group-flush">
+      <li *ngFor="let teacher of recentlyAdded" class="list-group-item">
+        <h3>{{ teacher.name }} {{ teacher.surname }}</h3>
+      </li>
+    </ul>
+  </div>
+</div>

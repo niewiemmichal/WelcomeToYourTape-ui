@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Teacher } from './teacher'
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 
 @Injectable({
@@ -10,6 +10,10 @@ import { catchError } from 'rxjs/operators';
 export class TeacherService {
 
   private teachersUrl = 'https://michalpadula.me/welcometoyourtape/teachers';
+
+  private httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
 
   getTeachers(subjectId: number): Observable<Teacher[]> {
     const url = `${this.teachersUrl}/subject/${subjectId}`;
@@ -20,6 +24,11 @@ export class TeacherService {
   getAllTeachers(): Observable<Teacher[]> {
     return this.client.get<Teacher[]>(this.teachersUrl)
       .pipe(catchError(this.handleError<Teacher[]>('getTeachers', [])));
+  }
+
+  addTeacher(teacher: Teacher): Observable<Teacher> {
+    return this.client.post<Teacher>(this.teachersUrl, teacher, this.httpOptions)
+      .pipe(catchError(this.handleError<Teacher>('addTeacher')));
   }
 
   private handleError<T>(operation: string, result?: T) {

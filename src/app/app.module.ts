@@ -14,6 +14,8 @@ import { SubjectFormComponent } from './subject-form/subject-form.component';
 import { TeachersComponent } from './teachers/teachers.component';
 import { SurveysComponent } from './surveys/surveys.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { TeacherFormComponent } from './teacher-form/teacher-form.component';
+import { QuestionFormComponent } from './question-form/question-form.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     SubjectFormComponent,
     TeachersComponent,
     SurveysComponent,
-    NavbarComponent
+    NavbarComponent,
+    TeacherFormComponent,
+    QuestionFormComponent
   ],
   imports: [
     BrowserModule,
