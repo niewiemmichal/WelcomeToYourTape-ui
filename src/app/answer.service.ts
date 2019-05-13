@@ -10,7 +10,8 @@ import {Subject} from './subject';
 })
 export class AnswerService {
 
-  private answersUrl = 'https://michalpadula.me/welcometoyourtape/answers';
+  // private answersUrl = 'https://michalpadula.me/welcometoyourtape/answers';
+  private answersUrl = 'http://localhost:8080/welcometoyourtape/answers';
 
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })

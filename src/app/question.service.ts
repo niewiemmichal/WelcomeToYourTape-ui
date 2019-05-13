@@ -9,7 +9,8 @@ import { Question } from './question';
 })
 export class QuestionService {
 
-  private questionsUrl = 'https://michalpadula.me/welcometoyourtape/questions';
+  // private questionsUrl = 'https://michalpadula.me/welcometoyourtape/questions';
+  private questionsUrl = 'http://localhost:8080/welcometoyourtape/questions';
 
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })

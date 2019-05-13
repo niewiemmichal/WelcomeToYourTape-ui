@@ -9,7 +9,8 @@ import {Survey} from './survey';
 })
 export class SurveyService {
 
-  private surveysUrl = 'https://michalpadula.me/welcometoyourtape/surveys';
+  // private surveysUrl = 'https://michalpadula.me/welcometoyourtape/surveys';
+  private surveysUrl = 'http://localhost:8080/welcometoyourtape/surveys';
 
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -20,9 +21,9 @@ export class SurveyService {
       .pipe(catchError(this.handleError<Survey>('addSurvey')));
   }
 
-  addSurveys(surveys: Survey[]) {
-    return this.client.post<Survey[]>(`${this.surveysUrl}/burst`, surveys, this.httpOptions)
-      .pipe(catchError(this.handleError<Survey[]>('addSurveys')));
+  addSurveysAndSubject(surveys: Survey[]) {
+    return this.client.post<Survey[]>(`${this.surveysUrl}/burst/subject`, surveys, this.httpOptions)
+      .pipe(catchError(this.handleError<Survey[]>('addSurveysAndSubject')));
   }
 
   getSurvey(subjectId: number, teacherId: number): Observable<Survey> {

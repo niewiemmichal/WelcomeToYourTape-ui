@@ -26,7 +26,7 @@ export class SubjectFormComponent implements OnInit {
     if (this.selectedTeachers.length > 0) {
       const surveys = new Array<Survey>();
       this.selectedTeachers.forEach(teacher => surveys.push( {id: null, subject: this.subject, teacher} ));
-      this.surveyService.addSurveys(surveys).subscribe(() => this.recentlyAdded.push(this.subject));
+      this.surveyService.addSurveysAndSubject(surveys).subscribe(() => this.recentlyAdded.push(this.subject));
     } else {
       this.subjectService.addSubject(this.subject).subscribe(() => this.recentlyAdded.push(this.subject));
     }

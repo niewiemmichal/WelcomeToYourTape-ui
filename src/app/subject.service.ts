@@ -9,7 +9,9 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class SubjectService {
 
-  private subjectsUrl = 'https://michalpadula.me/welcometoyourtape/subjects';
+  //private subjectsUrl = 'https://michalpadula.me/welcometoyourtape/subjects';
+  private subjectsUrl = 'http://localhost:8080/welcometoyourtape/subjects';
+
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };

@@ -9,7 +9,8 @@ import { catchError } from 'rxjs/operators';
 })
 export class TeacherService {
 
-  private teachersUrl = 'https://michalpadula.me/welcometoyourtape/teachers';
+  // private teachersUrl = 'https://michalpadula.me/welcometoyourtape/teachers';
+  private teachersUrl = 'http://localhost:8080/welcometoyourtape/teachers';
 
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
